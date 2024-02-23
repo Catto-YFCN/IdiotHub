@@ -13,14 +13,14 @@ local args = {
 }
 spawn(function()
     while wait() do
-        if not autoFish then break end
+        if not autoFishAdvanced then break end
         if not fishingRod:FindFirstChild("FishingLine") then
             remote:FireServer(unpack(args))
             wait(0.5)
         end
         if fishingRod:FindFirstChild("FishingLine") then
             while fishingRod:FindFirstChild("FishingLine") do
-                if not autoFish then break end
+                if not autoFishAdvanced then break end
                 local attachment1 = fishingRod:FindFirstChild("FishingLine").Attachment1
                 local bobber = attachment1.Parent
                 local height = tonumber(bobber.CFrame.Position.Y)
